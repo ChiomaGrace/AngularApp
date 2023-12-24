@@ -3,7 +3,7 @@ const express = require('express');
 const app = express(); //this is the function that then invokes express
 const mongoose = require('mongoose'); //needed in order to connect a database
 const routes = require('./server/config/routes'); //links the routes.js file that's located in server/config
-const port = 8000; //declares the port number
+const port = process.env.PORT || 8000; //declares the port number
 const cors = require("cors"); //needed in order to setup local and deployed environments
 
 const connectDatabase = mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
