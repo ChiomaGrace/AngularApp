@@ -10,7 +10,7 @@ const connectDatabase = mongoose.connect(process.env.MONGO_URI, { useNewUrlParse
   .then(() => console.log('Connected to MongoDB'))
   .catch(error => console.error('Could not connect to MongoDB', error));
 
-console.log("Mongo URL:", process.env.MONGO_URI);
+console.log("Mongo URL:", process.env.MONGO_URL);
 
 app.use(cors({
   origin: [process.env.FRONTEND_URL, "http://127.0.0.1:4200", "http://localhost:4200"]
