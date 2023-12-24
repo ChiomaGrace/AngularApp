@@ -6,7 +6,7 @@ const pokemonController = require("../controllers/pokemons"); //links the pokemo
 
 router.get('/', (request, response) => {
     // response.send("This is a test response from routes.js. If successful, this would display as the html in the browser on port 8000.")
-    response.sendFile(path.join(__dirname, '../../dist/angular-app/browser/index.html' ));
+    response.sendFile(path.join(__dirname, '../../../frontend/dist/angular-app/browser/index.html' ));
     console.log("This console log in the terminal is coming from the root route in routes.js")
 });
 

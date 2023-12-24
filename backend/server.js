@@ -4,14 +4,17 @@ const app = express(); //this is the function that then invokes express
 const mongoose = require('mongoose'); //needed in order to connect a database
 const routes = require('./server/config/routes'); //links the routes.js file that's located in server/config
 const port = 8000; //declares the port number
-const dotenv = require("dotenv"); //needed in order to use .env for database
-dotenv.config();
+const cors = require("cors"); //needed in order to setup local and deployed environments
 
 const connectDatabase = mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(error => console.error('Could not connect to MongoDB', error));
 
 console.log("Mongo URL:", process.env.MONGO_URI);
+
+app.use(cors({
+  origin: [process.env.FRONTEND_URL, "http://127.0.0.1:4200", "http://localhost:4200"]
+}));
 
 app.use('/', routes);  //this invokes the routes.js file
 
