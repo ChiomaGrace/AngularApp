@@ -2,7 +2,7 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-// import { SharedService } from '../shared-service.service';
+import { SharedService } from '../shared.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -22,13 +22,13 @@ export class CreatePokemonComponent {
 
   sendingPokemonObservable = {};
 
-  // constructor ( private _httpService: SharedService ) {
+  constructor ( private _httpService: SharedService ) {
     
-  // }
+  }
   
   submitPokemonForm() {
     console.log("The form has been submitted.")
-    // this.sendingPokemonObservable = this._httpService.createPokemonService(this.submittedPokemon);
+    this.sendingPokemonObservable = this._httpService.createPokemonService(this.submittedPokemon);
     console.log("The observable has been created, and here is the data its carrying:", this.submittedPokemon);
 
   }
