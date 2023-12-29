@@ -9,9 +9,8 @@ export class SharedService {
   constructor(private _httpClient: HttpClient) { }
 
   createPokemonService(submittedPokemon: any) {
-    console.log("This console log is from the shared.service.ts. It is specifically from the pokemonService function which is making the request to the backend");
-    console.log("This is all the data that was submitted from the form:", submittedPokemon);
-    return this._httpClient.post(import.meta.env["BACKEND_URL"] + '/submitPokemon', submittedPokemon)  
+    console.log("This console log is from the shared.service.ts. It is specifically from the pokemonService function which is making the request to the backend. Here is the data it is trying to send:", submittedPokemon);
+    return this._httpClient.post(import.meta.env["NG_APP_BACKEND_URL"] + '/submitPokemon', submittedPokemon)  
   }
 
 }
