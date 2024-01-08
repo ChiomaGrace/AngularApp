@@ -13,5 +13,3 @@ export class SharedService {
     // console.log("Environment variable:", import.meta.env["NG_APP_BACKEND_URL"] )
     return this._httpClient.post(import.meta.env["NG_APP_BACKEND_URL"] + '/submitPokemon', submittedPokemon)  
   }
-
-}
