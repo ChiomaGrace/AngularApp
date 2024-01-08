@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { CreatePokemonComponent } from './create-pokemon/create-pokemon.component';
+import { CommonModule } from "@angular/common";
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { CreatePokemonComponent } from "./create-pokemon/create-pokemon.component";
+
 
 @Component({
   selector: 'app-root',

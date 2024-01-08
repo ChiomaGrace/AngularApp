@@ -1,18 +1,32 @@
 <div class="container-fluid">
     <h1>Create Pokemon Component</h1>
-    <form (submit)="submitPokemonForm()">
-
+    <form (submit) = "submitPokemonForm()" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="nameOfPokemon" class="form-label">Name of Pokemon:</label>
             <input type="text" class="form-control" placeholder="Pokemon Name" name="pokemonName" [(ngModel)]="submittedPokemon.pokemonName">
         </div>
         <div class="mb-3">
             <div class="mb-3">
-                <label for="formFile" class="form-label">Upload Photo of Pokemon:</label>
-                <input class="form-control" type="file" id="formFile" name="pokemonImage" [(ngModel)]="submittedPokemon.pokemonImage">
+                <input class="form-control" type="file" (change)="getPokemonImage($event)" #fileUpload >
             </div>
             <button type="submit" class="btn btn-primary">Submit Pokemon</button>
         </div>
         {{ submittedPokemon | json}}
     </form>
 </div>
+
+
+
+
+<!-- <div class="container-fluid">
+    <h1>Create Pokemon Component</h1>
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Pokemon Name" (change)="getPokemonName(pokemonName.value)" #pokemonName>
+    </div>
+    <div class="mb-3">
+        <div class="mb-3">
+            <input class="form-control" type="file" (change)="getPokemonImage($event)" #fileUpload > 
+        </div>
+        <button (click) = "submitPokemonForm()" value="Upload file" class="btn btn-primary">Submit Pokemon</button>
+    </div>
+</div> -->
+
