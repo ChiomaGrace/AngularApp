@@ -1,0 +1,4 @@
+.pokemon-form-errors span{
+    display: block;
+    color: red;
+}

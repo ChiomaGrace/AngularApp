@@ -1,17 +1,16 @@
 const {response} = require('express');
 const {Pokemon} = require('../models/pokemon');
-const {cloudinary} = require('../utils/cloudinary');
-const upload = require("../utils/multer");
+const {cloudinary} = require('../utils/cloudinary'); //needed in order for the function to access the cloudinary acoount to upload image
+
 
 const createPokemon = (request, response) => {
-    console.log("This console log is from the create pokemon function in the controller:", request.body);
+    console.log("This console log is from the create pokemon function in the controller with the data from the frontend:", "Request.body:", request.body, "Request.file:", request.file);
     submittedPokemon = new Pokemon()
-        submittedPokemon.pokemonName = request.body.pokemonName
-        submittedPokemon.pokemonImage = request.body.pokemonImage
-        // submittedPokemon.pokemonImage = request.files.pokemonImage
-        // console.log("This is the image of the pokemon:", submittedPokemon.pokemonImage);
-        // const result = cloudinary.uploader.upload(submittedPokemon.pokemonImage);
-        // console.log("Result:", result);
+        submittedPokemon.pokemonName = request.body.pokemonName;
+        console.log("Pokemon Name:", submittedPokemon.pokemonName);
+        if (request.file) {
+            submittedPokemon.pokemonImage = request.file.path;
+        }
         submittedPokemon.save()
             .then(submittedPokemonData => {
                 console.log("This is the .then of the create Pokemon function in the controller saving the data:", submittedPokemonData);
@@ -22,6 +21,7 @@ const createPokemon = (request, response) => {
                 response.json(errors)
             })     
 }
+
 
 // const testFunction = (request, response) => {
 //     console.log("This console log is from the test function in the controller.");

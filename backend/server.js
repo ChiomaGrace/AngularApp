@@ -7,8 +7,6 @@ const port = process.env.PORT || 8000; //declares the port number
 const cors = require("cors"); //needed in order to setup local and deployed environments
 const dotenv = require("dotenv"); //needed in order to use .env for database
 dotenv.config();
-const multer = require('multer');
-const upload = multer();
 
 
 const connectDatabase = mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
