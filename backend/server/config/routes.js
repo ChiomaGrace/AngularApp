@@ -21,7 +21,7 @@ router.get('/getPokemon/:id', pokemonController.specificPokemon) //need the id i
 
 router.put(
     `/updatePokemon/:id`,  
-    upload.single('file'), //middleware that will take the image, upload it to Cloudinary, and return a request.file object with the file information to the controller
+    upload.single('file'),
     pokemonController.updatePokemon,
 );
 
