@@ -20,7 +20,8 @@ app.use(cors({
 
 app.use(express.json()); // middleware that parses incoming requests with JSON payloads (HTTP post, put, patch requests) and is based on body-parser aka so you can see/work with form data
 
-app.use(express.urlencoded()); // middleware that parses incoming requests with URL-ecnoded payloads (HTTP post, put, patch requests) and is based on body-parser aka so you can see/work with form data
+app.use(express.urlencoded({ extended: true })); // middleware that parses incoming requests with URL-ecnoded payloads (HTTP post, put, patch requests) and is based on body-parser aka so you can see/work with form data (the extended true part gets rid of the deprication warning in the terminal)
+
 
 app.use('/', routes);  //this invokes the routes.js file
 

@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="text-center mt-2">Show All Pokemon</h1>
+  <div class="row mb-3">
+    <div class="col font-weight-bold">#</div>
+    <div class="col font-weight-bold">Pokemon Name</div>
+    <div class="col font-weight-bold">Pokemon Image</div>
+    <div class="col font-weight-bold text-center">Edit Pokemon</div>
+  </div>
+  <div class="row mb-5" *ngFor = "let PokemonObject of allPokemon; let i = index">
+    <div class="col">{{i + 1}}</div>
+    <div class="col">{{PokemonObject["pokemonName"]}}</div>
+    <div class="col">  
+      <img [src]="PokemonObject['pokemonImage']" alt="An image of the Pokemon {{PokemonObject['pokemonName']}}">
+    </div>
+    <div class="col">
+      <a class="btn btn-outline-primary mr-1 mb-1" routerLink="/update/{{PokemonObject['_id']}}">Update Pokemon</a>
+      <a class="btn btn-outline-danger mr-1 mb-1" (click)="deletePokemon(PokemonObject['_id'])">Delete Pokemon</a>
+    </div>
+  </div>
+</div>

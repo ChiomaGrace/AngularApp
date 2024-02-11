@@ -1,7 +1,3 @@
-.container-fluid {
-    padding: 10px 80px;
-}
-
 .pokemon-form-errors span{
     display: block;
     color: red;
@@ -9,4 +5,9 @@
 
 .success-message {
     color: green;
+}
+
+.pokemonImage {
+    display: block;
+    margin: 0px auto;
 }

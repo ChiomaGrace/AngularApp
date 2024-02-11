@@ -1,0 +1,18 @@
+.container-fluid {
+    padding: 0px 80px;
+}
+
+img {
+    /* width: 420px;
+    height: 362px; */
+    width: 150px;
+    height: 150px;
+}
+
+.btn-outline-danger {
+    color: #dc3545 !important;
+}
+
+.btn-outline-danger:hover {
+    color: white !important;
+}

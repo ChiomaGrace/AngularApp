@@ -1,4 +1,7 @@
 <div class="container-fluid">
+  <h1 class="text-center mt-2"> {{pokemonName}}</h1>
+  <img class="pokemonImage" src="{{pokemonImage}}" alt="A photo of the Pokemon {{pokemonName}}">
+    <h2 class="text-center mt-2 pb-2">Update Pokemon</h2>
     <div class="pokemon-form-errors" *ngIf="!this.form.valid && !hasSubmittedSuccessfully">
         <span>{{pokemonNameFrontendValidationMessage}}</span>
         <span>{{pokemonImageFrontendValidationMessage}}</span>
@@ -10,19 +13,16 @@
     <div class="mb-3" *ngIf="hasSubmittedSuccessfully">
         <span class="success-message">{{successMessage}}</span>
     </div>
-    <h1 class="text-center">Create Pokemon Component</h1>
     <form [formGroup]="form">
-        <div class="mb-3">
+        <div class="mt-2 mb-3">
             <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Pokemon Name" [formControl]="form.controls.pokemonNameFrontendValidation" (change) = "submittedPokemonName($event)">
+                <input type="text" class="form-control" placeholder="{{pokemonName}}" [formControl]="form.controls.pokemonNameFrontendValidation" (change) = "submittedPokemonName($event)">
             </div>
             <div class="mb-3">
-                <input class="form-control" #fileInput type="file" (change) = "submittedPokemonImage($event)">
+                <input class="form-control" #fileInput type="file" (change) = "submittedPokemonImage($event)" [formControl]="form.controls.pokemonImageFrontendValidation" >
             </div>
-            <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit Pokemon</button>
+            <button type="submit" (click)="onSubmit()" class="btn btn-primary">Update Pokemon</button>
         </div>
     </form>
 </div>
-
-
 

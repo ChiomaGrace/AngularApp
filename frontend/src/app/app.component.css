@@ -1,0 +1,21 @@
+.navbar {
+    display: block;
+}
+
+.btn {
+    display: block;
+    width: 50%;
+    margin: 0px auto 4px auto;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        margin: 0px auto;
+    }
+
+    .btn {
+        display: inline-block;
+        margin: 0px 4px;
+        width: auto;
+    }
+}
