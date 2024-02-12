@@ -10,4 +10,5 @@
 .pokemonImage {
     display: block;
     margin: 0px auto;
+    width: 50%;
 }
